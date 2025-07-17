@@ -29,4 +29,3 @@ fn get_input() -> String {
 fn to_int( s : Option<&str>) -> i32 {
     return s.unwrap().trim().parse().expect("Input not an integer");
 }
-
