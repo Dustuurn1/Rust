@@ -1,6 +1,5 @@
 //TODO
 //create calculate function
-//identify math operation
 //add cli params
 
 use std::io;
@@ -14,7 +13,7 @@ fn main() {
     let mut operations = Vec::new();
 
     while let Some(token) = inputs.next() {
-        if let Ok(num) = token.trim().parse::<i32>() {
+        if let Ok(num) = token.trim().parse::<f32>() {
             numbers.push(num);
         } 
         else if matches!(token, "+" | "-" | "*" | "/") {
@@ -46,5 +45,14 @@ fn get_input() -> String {
         .read_line(&mut buffer) 
         .expect("Failed to get input");
     return buffer;
+}
+
+fn calculate(x : f32, y : f32, o : char) -> f32 {
+    match o {
+    '+' => x + y,
+    '-' => x - y,
+    '*' => x * y,
+    //Division
+    _ => 0.0}
 }
 
